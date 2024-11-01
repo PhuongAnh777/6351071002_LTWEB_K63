@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MvcBookStore.Models.CHUDE>
+
+<div class="sidebar">
+    <div class="sidebar__item">
+        <h4>Chủ Đề Sách</h4>
+        <ul>
+            @foreach (var category in Model)
+            {
+                <li>
+                    <a href="@Url.Action("SPTheochude", "BookStore", new { id = category.MaCD })">@category.TenChuDe</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+

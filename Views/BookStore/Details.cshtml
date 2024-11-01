@@ -1,0 +1,37 @@
+﻿@model MvcBookStore.Models.SACH
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<section class="product-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__pic">
+                    <div class="product__details__pic__item">
+                        <img class="product__details__pic__item--large"
+                             src="@Url.Content("~/img/Hinhdulieu/" + @Model.Hinhminhhoa)" alt="@Model.Tensach" />
+                    </div>
+
+                </div>
+            </div>
+            <h2>Thông tin chi tiết sách</h2>
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__text">
+                    <h3>Tên sách: @Model.Tensach</h3>
+                    <h5>Nhà xuất bản: @Model.NHAXUATBAN.TenNXB</h5>
+                    <h5>Chủ đề: @Model.CHUDE.TenChuDe</h5>
+                    <p>
+                        @Model.Mota
+                    </p>
+                    <div class="product__details__price">Giá tiền: @Model.Dongia.ToString() VNĐ</div>
+
+                    <a href="#" class="primary-btn">ADD TO CARD</a>
+                    <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
