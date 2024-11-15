@@ -1,4 +1,6 @@
-﻿@model IEnumerable<MvcBookStore.Models.SACH>
+﻿@using MvcBookStore.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SACH>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -10,21 +12,84 @@
     {
         <div class="col-lg-3 col-md-4 col-sm-6">
 
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="@Url.Content("~/img/Hinhdulieu/" + item.Hinhminhhoa)">
-                        <ul class="product__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="@Url.Action("ThemGiohang", "GioHang", new { @iMasach = item.Masach, @strURl=Request.Url.ToString()})"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a  href="@Url.Action("Details", "BookStore", new { id = item.Masach })">@item.Tensach</a></h6>
-                        <h5>@item.Dongia.ToString()</h5>
-                    </div>
+            <div class="product__item">
+                <div class="product__item__pic set-bg" data-setbg="@Url.Content("~/img/Hinhdulieu/" + item.Hinhminhhoa)">
+                    <ul class="product__item__pic__hover">
+                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                        <li><a href="@Url.Action("ThemGiohang", "GioHang", new { @iMasach = item.Masach, @strURl=Request.Url.ToString()})"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
                 </div>
-           
+                <div class="product__item__text">
+                    <h6><a href="@Url.Action("Details", "BookStore", new { id = item.Masach })">@item.Tensach</a></h6>
+                    <h5>@item.Dongia.ToString()</h5>
+                </div>
+            </div>
+
         </div>
     }
 </div>
+
+
+@*Tạo liên kết các trang*@
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("SPTheochude", new { page = page }), new PagedListRenderOptions
+     {
+         DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+         DisplayLinkToLastPage = PagedListDisplayMode.Always,
+         DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+         DisplayLinkToNextPage = PagedListDisplayMode.Always,
+         DisplayLinkToIndividualPages = true,
+         MaximumPageNumbersToDisplay = 5,
+         ContainerDivClasses = new[] { "pagination" }
+
+    })
+</div>
+
+<style>
+    /* Styling for the pagination container */
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
+
+        /* Styling for each page item */
+        .pagination li {
+            margin: 0 5px;
+        }
+
+            /* Styling for links inside page items */
+            .pagination li a {
+                display: block;
+                padding: 8px 12px;
+                color: #007bff;
+                text-decoration: none;
+                border-radius: 4px;
+                border: 1px solid #dee2e6;
+            }
+
+                /* Hover effect for pagination links */
+                .pagination li a:hover {
+                    background-color: #f8f9fa;
+                }
+
+            /* Styling for the active page */
+            .pagination li.active a {
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+
+            /* Styling for disabled links (e.g., first or previous when on the first page) */
+            .pagination li.disabled a {
+                color: #6c757d;
+                pointer-events: none;
+                background-color: #fff;
+                border-color: #dee2e6;
+            }
+</style>
+
+
 

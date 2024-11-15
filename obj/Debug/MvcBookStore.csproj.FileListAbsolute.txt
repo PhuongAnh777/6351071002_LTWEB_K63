@@ -72,3 +72,9 @@ D:\Documents\6351071002_LTW_K63\MvcBookStore\obj\Debug\MvcBookStore.dll
 D:\Documents\6351071002_LTW_K63\MvcBookStore\obj\Debug\MvcBookStore.pdb
 D:\Documents\6351071002_LTW_K63\MvcBookStore\bin\EntityFramework.dll
 D:\Documents\6351071002_LTW_K63\MvcBookStore\bin\EntityFramework.xml
+D:\Documents\6351071002_LTW_K63\MvcBookStore\bin\PagedList.dll
+D:\Documents\6351071002_LTW_K63\MvcBookStore\bin\PagedList.Mvc.dll
+D:\Documents\6351071002_LTW_K63\MvcBookStore\bin\PagedList.xml
+D:\Documents\6351071002_LTW_K63\MvcBookStore\bin\PagedList.Mvc.xml
+D:\Documents\6351071002_LTW_K63\MvcBookStore\bin\Newtonsoft.Json.dll
+D:\Documents\6351071002_LTW_K63\MvcBookStore\bin\Newtonsoft.Json.xml

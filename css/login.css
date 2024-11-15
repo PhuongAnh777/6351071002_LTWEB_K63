@@ -1,0 +1,90 @@
+﻿/*@media only screen and (min-width: 1200px) {*/
+/*    .container {
+        width: 700px;
+        margin: auto;
+    }*/
+/*}*/
+/* Center the form on the page */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* Style the form */
+.login-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+    /* Heading style */
+    .login-form h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
+
+    /* Form group style */
+    .login-form .form-group {
+        margin-bottom: 1rem;
+    }
+
+    /* Label and input field style */
+    .login-form label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #555;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        color: #333;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s;
+    }
+
+        /* Input focus style */
+        .login-form input[type="text"]:focus,
+        .login-form input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+    /* Button style */
+    .login-form button[type="submit"] {
+        width: 100%;
+        padding: 0.8rem;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        /* Button hover effect */
+        .login-form button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+/* Error message style */
+.text-danger {
+    font-size: 0.9rem;
+    color: #d9534f;
+}
+

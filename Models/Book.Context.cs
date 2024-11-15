@@ -36,5 +36,6 @@ namespace MvcBookStore.Models
         public DbSet<TACGIA> TACGIA { get; set; }
         public DbSet<THAMDO> THAMDO { get; set; }
         public DbSet<VIETSACH> VIETSACH { get; set; }
+        public DbSet<ADMIN> ADMIN { get; set; }
     }
 }
